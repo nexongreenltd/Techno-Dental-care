@@ -19,7 +19,7 @@ export function DoctorSection({ hideEyebrow = false }: { hideEyebrow?: boolean }
   ];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-surface via-white to-surface py-28">
+    <section className="relative overflow-hidden bg-gradient-to-b from-surface via-white to-surface py-16 md:py-28">
       <OrbitField className="-z-10 opacity-30" />
       <div className="pointer-events-none absolute -right-32 top-20 -z-10 h-[420px] w-[420px] rounded-full bg-brand-soft/40 blur-3xl" />
 
@@ -73,7 +73,7 @@ export function DoctorSection({ hideEyebrow = false }: { hideEyebrow?: boolean }
                   <span className="h-px w-8 bg-brand/40" /> {t("doc_eyebrow")}
                 </p>
               )}
-              <h2 className={`${hideEyebrow ? "" : "mt-3"} text-balance font-display text-4xl font-bold tracking-tight text-ink md:text-5xl ${lang === "bn" ? "leading-[1.45]" : "leading-[1.05]"}`}>
+              <h2 className={`${hideEyebrow ? "" : "mt-3"} text-balance font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl md:text-5xl ${lang === "bn" ? "leading-[1.45]" : "leading-[1.05]"}`}>
                 Prof. Dr. Golam Mohammad <span className="text-gradient-brand">(Pavel)</span>
               </h2>
               <p className="mt-2 text-sm font-medium text-brand">

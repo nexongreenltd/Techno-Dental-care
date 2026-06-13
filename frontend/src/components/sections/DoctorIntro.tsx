@@ -14,7 +14,7 @@ export function DoctorIntro() {
     { icon: ShieldCheck, label: t("doc_reg").split("·")[0].trim() },
   ];
   return (
-    <section className="relative overflow-hidden bg-white py-20">
+    <section className="relative overflow-hidden bg-white py-14 md:py-20">
       <div className="pointer-events-none absolute -right-32 top-10 -z-10 h-[360px] w-[360px] rounded-full bg-brand-soft/30 blur-3xl" />
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-12 md:grid-cols-[0.9fr_1.1fr] md:items-center">

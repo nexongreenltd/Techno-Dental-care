@@ -8,8 +8,8 @@ export function Footer() {
   return (
     <footer className="mt-24 border-t border-border bg-surface">
       <div className="mx-auto max-w-7xl px-6 py-14">
-        <div className="grid gap-10 md:grid-cols-4">
-          <div className="md:col-span-1">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+          <div className="col-span-2 md:col-span-1">
             <Wordmark />
             <p className="mt-4 text-sm leading-relaxed text-ink-soft">
               {t("foot_tagline")}

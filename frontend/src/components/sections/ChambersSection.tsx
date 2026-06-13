@@ -29,7 +29,7 @@ export function ChambersSection({ hideHeader = false }: { hideHeader?: boolean }
   const c = chamberData;
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-surface to-white py-28">
+    <section className="relative overflow-hidden bg-gradient-to-b from-white via-surface to-white py-16 md:py-28">
       <div className="pointer-events-none absolute right-0 top-1/3 -z-10 h-[420px] w-[420px] rounded-full bg-brand-soft/40 blur-3xl" />
       <div className="pointer-events-none absolute -left-32 bottom-20 -z-10 h-[360px] w-[360px] rounded-full bg-brand-soft/30 blur-3xl" />
       <div className="mx-auto max-w-7xl px-6">

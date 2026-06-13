@@ -28,7 +28,7 @@ const pillars = [
 
 export function StatsSection() {
   return (
-    <section className="relative overflow-hidden bg-white py-28">
+    <section className="relative overflow-hidden bg-white py-16 md:py-28">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand/25 to-transparent" />
       <div className="pointer-events-none absolute -top-32 left-1/2 -z-10 h-[500px] w-[1000px] -translate-x-1/2 rounded-full bg-brand-soft/30 blur-3xl" />
       <div className="pointer-events-none absolute inset-0 -z-10 bg-grid-faint opacity-50 [mask-image:radial-gradient(ellipse_at_center,black_25%,transparent_70%)]" />

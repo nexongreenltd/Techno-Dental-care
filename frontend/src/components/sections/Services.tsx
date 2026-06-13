@@ -10,7 +10,7 @@ export function ServicesSection({ compact = false, hideHeader = false }: { compa
   const { lang, t } = useLanguage();
   const list = compact ? services.slice(0, 6) : services;
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-surface to-white py-28">
+    <section className="relative overflow-hidden bg-gradient-to-b from-white via-surface to-white py-16 md:py-28">
       <div className="pointer-events-none absolute -left-40 top-40 -z-10 h-[400px] w-[400px] rounded-full bg-brand-soft/30 blur-3xl" />
       <div className="pointer-events-none absolute right-0 bottom-40 -z-10 h-[400px] w-[400px] rounded-full bg-brand-soft/20 blur-3xl" />
       <div className="mx-auto max-w-7xl px-6">

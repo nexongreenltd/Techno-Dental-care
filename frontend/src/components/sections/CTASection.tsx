@@ -7,7 +7,7 @@ export function CTASection() {
   const { lang, t } = useLanguage();
   return (
     <section className="relative px-6 py-28">
-      <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2.75rem] bg-gradient-brand p-10 shadow-glow md:p-16">
+      <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl bg-gradient-brand p-7 shadow-glow sm:rounded-[2.75rem] sm:p-10 md:p-16">
         <svg
           viewBox="0 0 800 400"
           preserveAspectRatio="xMidYMid slice"
@@ -34,7 +34,7 @@ export function CTASection() {
               <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse-ring" />
               {t("cta_badge")}
             </span>
-            <h2 className={`mt-4 text-balance font-display text-4xl font-bold tracking-tight text-white md:text-6xl ${lang === "bn" ? "leading-[1.45]" : "leading-[1.05]"}`}>
+            <h2 className={`mt-4 text-balance font-display text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-6xl ${lang === "bn" ? "leading-[1.45]" : "leading-[1.05]"}`}>
               {t("cta_title")}
             </h2>
             <p className="mt-5 max-w-lg text-white/85">{t("cta_sub")}</p>

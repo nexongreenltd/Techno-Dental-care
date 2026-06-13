@@ -29,7 +29,7 @@ export function PageHero({
           <span className="h-px w-8 bg-brand/40" /> {eyebrow}
         </p>
         <h1
-          className={`mt-3 max-w-3xl text-balance font-display text-5xl font-bold tracking-tight text-ink md:text-7xl ${
+          className={`mt-3 max-w-3xl text-balance font-display text-3xl font-bold tracking-tight text-ink sm:text-5xl md:text-7xl ${
             lang === "bn" ? "leading-[1.45]" : "leading-tight"
           }`}
         >

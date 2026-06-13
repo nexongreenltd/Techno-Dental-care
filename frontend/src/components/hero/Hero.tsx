@@ -21,7 +21,7 @@ export function Hero() {
       <div className="pointer-events-none absolute -top-32 left-1/2 -z-10 h-[520px] w-[1100px] -translate-x-1/2 rounded-full bg-brand-soft/50 blur-3xl" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-white" />
 
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 pt-14 pb-24 md:grid-cols-[1.05fr_1fr] md:gap-10 md:pt-20 md:pb-32">
+      <div className="mx-auto grid max-w-7xl gap-8 px-6 pt-10 pb-16 md:grid-cols-[1.05fr_1fr] md:gap-10 md:pt-20 md:pb-32">
         <div className="animate-fade-up flex flex-col justify-center">
           <Link
             to="/about"
@@ -35,7 +35,7 @@ export function Hero() {
             <ArrowRight className="h-3.5 w-3.5 text-brand transition group-hover:translate-x-0.5" />
           </Link>
 
-          <h1 className={`mt-6 text-balance font-display text-[44px] font-bold tracking-[-0.03em] text-ink sm:text-6xl lg:text-[80px] ${lang === "bn" ? "leading-[1.45]" : "leading-[1.02]"}`}>
+          <h1 className={`mt-6 text-balance font-display text-[32px] font-bold tracking-[-0.03em] text-ink sm:text-[44px] sm:text-6xl lg:text-[80px] ${lang === "bn" ? "leading-[1.45]" : "leading-[1.02]"}`}>
             {t("hero_title_1")}<br/>{t("hero_title_2")} <span className="relative inline-block">
               <span className="text-gradient-brand">{t("hero_title_3")}</span>
               <svg className="absolute -bottom-2 left-0 h-3 w-full" viewBox="0 0 300 12" preserveAspectRatio="none" aria-hidden>
@@ -75,8 +75,8 @@ export function Hero() {
           </ul>
         </div>
 
-        <div className="relative flex items-center justify-center">
-          <div className="relative w-full max-w-[560px]">
+        <div className="relative mt-4 flex items-center justify-center overflow-hidden rounded-3xl md:mt-0 md:overflow-visible md:rounded-none">
+          <div className="relative w-full max-w-[320px] sm:max-w-[480px] lg:max-w-[560px]">
             <ToothScene />
 
             <FloatingCard
@@ -88,7 +88,7 @@ export function Hero() {
               delay={0.2}
             />
             <FloatingCard
-              className="right-[-4%] top-[6%]"
+              className="right-[-4%] top-[6%] hidden sm:flex"
               icon={<CalendarDays className="h-4 w-4 text-brand" />}
               title={t("hero_stat_booking")}
               value={t("hero_stat_booking_val")}
