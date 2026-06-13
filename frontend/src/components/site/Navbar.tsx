@@ -60,7 +60,7 @@ export function Navbar() {
               </Button>
             </div>
           </div>
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-1.5 md:hidden">
             {/* Language toggle mobile */}
             <button
               onClick={toggle}
@@ -68,6 +68,23 @@ export function Navbar() {
             >
               {lang === "en" ? "বাং" : "EN"}
             </button>
+            {/* Profile icon */}
+            <Link
+              to={user && primaryRole ? `/${primaryRole}` : "/auth"}
+              search={!user ? { mode: "login", redirect: "/dashboard" } : undefined}
+              className="grid h-8 w-8 place-items-center rounded-lg border border-border bg-white text-ink-soft hover:border-brand/40 hover:text-brand"
+              aria-label="Account"
+            >
+              <UserRound className="h-4 w-4" />
+            </Link>
+            {/* Book button */}
+            <Link
+              to="/appointment"
+              className="inline-flex items-center gap-1 rounded-lg bg-gradient-brand px-3 py-1.5 text-xs font-semibold text-white shadow-glow"
+            >
+              <CalendarDays className="h-3.5 w-3.5" />
+              {t("nav_book")}
+            </Link>
             <button
               className="rounded-lg p-2 text-ink"
               onClick={() => setOpen((v) => !v)}
