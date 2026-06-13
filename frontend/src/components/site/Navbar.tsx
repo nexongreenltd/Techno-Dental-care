@@ -1,8 +1,8 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { Wordmark } from "@/components/brand/Logo";
 import { Button } from "@/components/ui/button";
 import { Menu, X, UserRound, ChevronDown, LayoutDashboard, CalendarDays, FileText, Activity, Users, ClipboardList, BarChart3, Settings, LogOut, LogIn, UserPlus } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem,
   DropdownMenuLabel, DropdownMenuSeparator,
@@ -14,6 +14,10 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const { user, primaryRole, signOut } = useAuth();
   const { t, lang, toggle } = useLanguage();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+
+  // close menu on navigation
+  useEffect(() => { setOpen(false); }, [pathname]);
 
   const links = [
     { to: "/", label: t("nav_home") },
@@ -60,42 +64,49 @@ export function Navbar() {
               </Button>
             </div>
           </div>
-          <div className="flex items-center gap-1.5 md:hidden">
-            {/* Language toggle mobile */}
+          <div className="flex items-center gap-2 md:hidden">
+            {/* Language toggle */}
             <button
               onClick={toggle}
               className="rounded-full border border-border bg-white px-2.5 py-1 text-xs font-semibold text-ink"
             >
               {lang === "en" ? "বাং" : "EN"}
             </button>
-            {/* Profile icon */}
+            {/* Profile icon — icon only */}
             <Link
               to={user && primaryRole ? `/${primaryRole}` : "/auth"}
               search={!user ? { mode: "login", redirect: "/dashboard" } : undefined}
-              className="grid h-8 w-8 place-items-center rounded-lg border border-border bg-white text-ink-soft hover:border-brand/40 hover:text-brand"
+              className="grid h-8 w-8 place-items-center rounded-full border border-border bg-white text-ink-soft"
               aria-label="Account"
             >
               <UserRound className="h-4 w-4" />
             </Link>
-            {/* Book button */}
+            {/* Book — icon only */}
             <Link
               to="/appointment"
-              className="inline-flex items-center gap-1 rounded-lg bg-gradient-brand px-3 py-1.5 text-xs font-semibold text-white shadow-glow"
+              className="grid h-8 w-8 place-items-center rounded-full bg-gradient-brand text-white shadow-glow"
+              aria-label="Book appointment"
             >
-              <CalendarDays className="h-3.5 w-3.5" />
-              {t("nav_book")}
+              <CalendarDays className="h-4 w-4" />
             </Link>
+            {/* Hamburger */}
             <button
-              className="rounded-lg p-2 text-ink"
+              className="grid h-8 w-8 place-items-center rounded-full border border-border bg-white text-ink"
               onClick={() => setOpen((v) => !v)}
               aria-label="Toggle menu"
             >
-              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
             </button>
           </div>
         </div>
         {open && (
-          <div className="glass mt-2 rounded-2xl p-3 md:hidden">
+          <>
+            <div
+              className="fixed inset-0 z-40 md:hidden"
+              onClick={() => setOpen(false)}
+              aria-hidden
+            />
+            <div className="relative z-50 glass mt-2 rounded-2xl p-3 md:hidden">
             <div className="flex flex-col">
               {links.map((l) => (
                 <Link
@@ -117,6 +128,7 @@ export function Navbar() {
               </Button>
             </div>
           </div>
+          </>
         )}
       </div>
     </header>
